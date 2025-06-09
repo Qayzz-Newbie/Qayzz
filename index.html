@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tentang Saya - Qayzz</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      overflow: hidden;
+    }
+
+    #loading {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background-color: #4a90e2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      font-size: 24px;
+      z-index: 9999;
+      user-select: none;
+    }
+
+    .dots {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      background-color: white;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out;
+    }
+
+    .dot:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+    .dot:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+    .dot:nth-child(3) {
+      animation-delay: 0;
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.3;
+      }
+      40% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    #content {
+      display: none;
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      overflow: auto;
+    }
+
+    #content.show {
+      display: block;
+      opacity: 1;
+    }
+
+    header {
+      text-align: center;
+      color: #4a90e2;
+    }
+    header h1 {
+      margin-bottom: 8px;
+    }
+    section {
+      margin-top: 30px;
+    }
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #4a90e2;
+      padding-bottom: 8px;
+    }
+
+    a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    #contactBtn {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(37, 211, 102, 0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 40px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #contactBtn:hover, #contactBtn:focus {
+      background-color: #1ebe57;
+      outline: none;
+      transform: scale(1.05);
+    }
+
+    .skill-list {
+      list-style-type: disc;
+      margin-left: 20px;
+      padding: 0;
+      color: #4a90e2;
+    }
+    .skill-list li {
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
+      animation-name: fadeUp;
+      animation-duration: 0.6s;
+      animation-timing-function: ease-out;
+    }
+
+    .skill-list li:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .skill-list li:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .skill-list li:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .skill-list li:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .skill-list li:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loading" role="alert" aria-live="assertive">
+    Loading
+    <div class="dots" aria-hidden="true">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <div id="content" tabindex="0" role="main" aria-label="Tentang Saya">
+    <header>
+      <h1>Halo, Saya Qayzz</h1>
+      <p>Pelajar | Pengembang Bot WhatsApp | Web Enthusiast</p>
+    </header>
+
+    <section>
+      <h2>Tentang Saya</h2>
+      <p>Nama saya Qayzz, seorang pelajar yang antusias dalam dunia pemrograman. Saat ini saya sedang fokus mempelajari pengembangan bot WhatsApp.</p>
+    </section>
+
+    <section>
+      <h2>Keahlian</h2>
+      <ul class="skill-list" aria-label="Daftar keahlian saya">
+        <li>JavaScript & Node.js</li>
+        <li>Baileys (WhatsApp Bot)</li>
+        <li>Web Scraping (Cheerio, Axios)</li>
+        <li>HTML & CSS</li>
+        <li>Git & GitHub</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Kontak Saya</h2>
+      <ul>
+        <li>Email: Qayzz@example.com</li>
+        <li>GitHub: <a href="https://github.com/Qayzz-Newbie" target="_blank" rel="noopener noreferrer">github.com/Qayzz-Newbie</a></li>
+        <li>WhatsApp: <a href="https://wa.me/6281243825006" target="_blank" rel="noopener noreferrer">+62 821-4597-7922</a></li>
+        <li>Grup WhatsApp: <a href="https://chat.whatsapp.com/LCd7FzfriYcFCu0VuAZueR" target="_blank" rel="noopener noreferrer">Klik untuk Bergabung</a></li>
+      </ul>
+    </section>
+
+    <button id="contactBtn" aria-label="Hubungi Saya via WhatsApp">Kontak Saya</button>
+
+    <footer>
+      � 2025 Qayzz. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loading = document.getElementById('loading')
+        const content = document.getElementById('content')
+        loading.style.display = 'none'
+        content.classList.add('show')
+        content.focus()
+        document.body.style.overflow = 'auto'
+      }, 2500)
+    })
+
+    document.getElementById('contactBtn').addEventListener('click', () => {
+      window.open('https://wa.me/6282145977922', '_blank')
+    })
+  </script>
+
+
+</body></html>
